@@ -6,3 +6,4 @@ report.html
 __pycache__/
 *.py[cod]
 *$py.class
+report

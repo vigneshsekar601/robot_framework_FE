@@ -1,8 +1,11 @@
 *** Settings ***
 Resource    ../../resource/common.robot
+Resource    ../../keyworks/register.robot
 
 
 *** Test Cases ***
 Register User
-    Given Open the Application
+    [Tags]    register_user
+    Given Open The application
     Then Register User
+    And Delete Account

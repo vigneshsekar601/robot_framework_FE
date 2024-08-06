@@ -10,6 +10,10 @@ def generate_faker_data(data_type):
             return fake.first_name()
         case "last_name":
             return fake.last_name()
+        case "password":
+            return fake.password()
+        case "password":
+            return fake.address()
         case "middle_name":
             full_name = fake.name()
             middle_name = full_name.split()[1]

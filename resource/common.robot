@@ -14,14 +14,34 @@ Open the Application
     Should Be Equal    ${title}    Automation Exercise
     Sleep    2s
 
-Register User
-    [Documentation]    This is to register an new user.
-    Page Should Contain    Home
-    Click Element    ${login_signup_btn}
-    ${new_user_signup}    Get Text    ${new_user_signup_txt}
-    Should Be Equal    ${new_user_signup}    New User Signup!
+Fake details generator
+    [Documentation]    This keyword contains fake data
     ${name}    Generate Faker Data    name
     ${email}    Generate Faker Data    email
-    Input Text    ${sign_up_name_field}    ${name}
-    Input Text    ${sign_up_email_field}    ${email}
-    Click Button    ${sign_up_button}
+    ${password}    Generate Faker Data    password
+    ${first_name}    Generate Faker Data    first_name
+    ${last_name}    Generate Faker Data    last_name
+    ${address}    Generate Faker Data    address
+    ${phone_number}    Generate Faker Data    phone_number
+    Set Global Variable    ${name}
+    Set Global Variable    ${email}
+    Set Global Variable    ${password}
+    Set Global Variable    ${first_name}
+    Set Global Variable    ${last_name}
+    Set Global Variable    ${address}
+    Set Global Variable    ${phone_number}
+
+Click Login/signUp button
+    Click Element    ${login_signup_btn}
+
+Delete Account
+    Click Element    ${delete_account}
+    ${account_deleted_txt}    Get Text    ${act_deleted_txt}
+    Should Be Equal    ${account_deleted_txt}    ACCOUNT DELETED!
+    Click Element    ${continue_btn}
+    Sleep    3s
+
+logout the User
+    Click Element    ${logout}
+    ${login_txt}    Get Text    ${user_login_txt}
+    Should Be Equal    ${login_txt}    Login to your account
