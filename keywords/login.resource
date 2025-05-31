@@ -1,6 +1,6 @@
 *** Settings ***
 Library     SeleniumLibrary
-Resource    ../resource/common.robot
+Resource    ../resource/common.resource
 
 
 *** Keywords ***

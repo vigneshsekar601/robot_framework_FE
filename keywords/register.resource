@@ -3,7 +3,7 @@ Library         SeleniumLibrary
 Library         ../resource/custom_library/custom.py
 Variables       ../config/environment.py
 Variables       ../resource/pageObjects/register.py
-Resource        ../resource/common.robot
+Resource        ../resource/common.resource
 
 *** Keywords ***
 Register User
